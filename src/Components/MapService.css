@@ -1,0 +1,30 @@
+.card-information{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top:30px;
+    left:10px;
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    border: 1px black;
+    border-radius: 15px;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.user-information{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border: '2px solid red';
+    cursor: pointer;
+}
+
+.battery-information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

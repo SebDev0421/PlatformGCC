@@ -1,23 +1,45 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import logo from './logo.svg';
+
+import { useEffect,useState } from 'react';
 import './App.css';
 
+import Home from './Views/Home'
+import Login from './Views/Login'
+import Register from './Views/Register'
+import Main from './Views/Main'
+import Records from './Views/Records'
+
+
 function App() {
+  const position = {lat:53.4,lng:10};
+  const [open,setOpen] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route 
+            path='/'
+            element={<Home/>}
+          />
+          <Route 
+            path='/Login'
+            element={<Login/>}
+          />
+          <Route 
+            path='/Register'
+            element={<Register/>}
+          />
+          <Route 
+            path='/App'
+            element={<Main/>}
+          />
+          <Route 
+            path='/Records/:id'
+            element={<Records/>}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

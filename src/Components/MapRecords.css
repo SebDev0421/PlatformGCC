@@ -1,0 +1,29 @@
+.card-information{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top:30px;
+    right:10px;
+    background-color: aliceblue;
+    width: 300px;
+    height: 260px;
+    border: 1px black;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.card-information a{
+    margin-top: 20px;
+}
+
+.calendarContainer{
+    position: absolute;
+    z-index: 1;
+    top:30px;
+    right:10px; 
+    width: 250px;
+    height: 250px;
+    background-color: aliceblue;
+    border: 1px black;
+    border-radius: 15px;
+}

@@ -1,0 +1,29 @@
+.Login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/src/Images/backgroundApp.jpg");
+    color: gray;
+}
+
+.Card-container{
+    width: 45%;
+    height: 70%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+input{
+    width: 50%;
+    height: 40px;
+    border-radius: 15px;
+}
+
+button{
+    margin-top: 30px;
+    border-radius: 15px;
+    width: 40%;
+    height: 40px;
+}
