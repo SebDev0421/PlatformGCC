@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import logo from './logo.svg';
 
 import { useEffect,useState } from 'react';
@@ -9,7 +9,9 @@ import Login from './Views/Login'
 import Register from './Views/Register'
 import Main from './Views/Main'
 import Records from './Views/Records'
+import Error from './Views/Error'
 
+import { PrivateRoute } from './PrivateRoute';
 
 function App() {
   const position = {lat:53.4,lng:10};
@@ -32,11 +34,24 @@ function App() {
           />
           <Route 
             path='/App'
-            element={<Main/>}
+            element={
+            <PrivateRoute>
+              <Main/>
+            </PrivateRoute>
+            }
           />
           <Route 
             path='/Records/:id'
-            element={<Records/>}
+            element={
+            <PrivateRoute>
+              <Records/>
+            </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='*'
+            element={<Error/>}
           />
         </Routes>
       </BrowserRouter>

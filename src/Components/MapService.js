@@ -74,7 +74,7 @@ function MapService() {
                   />
                 </AdvancedMarker>
               )
-            })
+            },[listPos])
           }
 
           {open && (
@@ -82,7 +82,7 @@ function MapService() {
           )}
         </Map>
 
-        <div className="card-information">
+        <div className="card-information" style={{height:'90%',backgroundColor:'white'}}>
           <h3>Lista de usuarios</h3>
           {
             listPos.map((data)=>{
@@ -110,9 +110,10 @@ function MapService() {
                   <a>
                     {data.location}
                   </a>
-                  <div className='battery-information'>
+                  <div className='battery-information' style={{position:'relative',display:'flex',textAlign:'center',justifyContent:'center'}}>
                     
                     <img src={batteryMed} alt='battery' style={{width:30,height:30}}/>
+
                     <a>
                       {Math.round(data.battery*100)}
                     </a>

@@ -20,6 +20,9 @@ function App(props) {
   const position = { lat: 4.715092503785059, lng: -74.12773658824975 };
   const [open, setOpen] = useState(false);
   const [listPos, setListPos] = useState([]);
+  const [firstConn,setFirtsConn] = useState("Primera conexion");
+  const [lastConn,setLastConn] = useState("");
+
   const [slectedMarker, setSlectedMarker] = useState({
     lat: 0,
     lng: 0,
@@ -76,7 +79,10 @@ function App(props) {
     })
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
+        const lastPoint = res.length;
+
+        setFirtsConn(res[0].dateTime)
+        setLastConn(res[lastPoint-1].dateTime)
         setListPos(res);
       })
       .catch((e) => console.log(e));
@@ -148,11 +154,13 @@ function App(props) {
         )}
       </Map>
       <div className="card-information">
-        <h5>Informacion usuario</h5>
-        <a>{nameUser}</a>
+        <h4>Informacion usuario</h4>
+        <h5>{nameUser}</h5>
         <a>{email}</a>
         <a>{phone}</a>
         <a>{props.idUser}</a>
+        <a>{firstConn}</a>
+        <a>{lastConn}</a>
       </div>
 
       <div className="calendarContainer">
